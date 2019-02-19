@@ -1,0 +1,17 @@
+[package]
+name = "py_render_lib"
+version = "0.1.0"
+authors = ["Bug0r"]
+
+[dependencies]
+libc = "*"
+math = { path = "../math-rust", version = "*" }
+renderer = { path = "../renderer-rust", version = "*" }
+
+[lib]
+name = "py_render_lib"
+crate-type = ["cdylib"] # could be 'cdylib' `staticlib` and 'dylib' or 'rlib' as well
+
+[profile.release]
+lto = true
+panic = 'abort'
